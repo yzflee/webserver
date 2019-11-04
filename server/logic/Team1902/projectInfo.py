@@ -3,7 +3,7 @@ import ssl
 import requests
 import os
 import json
-repos = ['cxsjclassroom/webserver',"octocat/Hello-World",'knex/knex']
+repos = ['cxsjclassroom/webserver']
 
 def getProjectInfo():
     info = {}
