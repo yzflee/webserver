@@ -28,7 +28,7 @@
 				</li>
 				<!-- add data into the example-->
 				<?python
-				for repoName,info in projectInfo.items():
+				for repoName,info in projectInfo[0].items():
 				?>
 				<li class="occlusion-queue">
 					<div class="occlusion-task">
@@ -53,9 +53,9 @@
 				<?python
 				pass
 				?>
-				<hr />
 			</ul>
 			<ul>
+				<hr>
 				<!--  example-->
 				<li class="occlusion-history success">
 					<div class="occlusion-task">
@@ -93,7 +93,7 @@
 				</li>
 				<!-- add data into the example-->
 				<?python
-				for repoName,info in projectInfo.items():
+				for repoName,info in projectInfo[0].items():
 				?>
 				<li class="occlusion-history success">
 					<div class="occlusion-task">
@@ -120,7 +120,7 @@
 							<span>
 								<?python
 									_[info['stargazers_count']]
-									_[info['name']]
+
 								?>
 							</span>
 						</div>
@@ -156,6 +156,91 @@
 									_[info['open_issues']]
 								?>
 							</span>
+						</div>
+					</div>
+				</li>
+				<?python
+				for repoName,info in projectInfo[1].items():
+				?>
+				<li class="occlusion-history success">
+					<div class="occlusion-task">
+						<div class="occlusion-task-name">
+							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 1.5L6.499 13.716.5 8.78"></path></svg>
+							<span>
+								<?python
+									_[repoName]
+								?>
+								:
+							</span>
+						</div>
+					</div>
+					<div class="occlusion-infos">
+						<div class="occlusion-info chunks">
+
+							<span>
+								<?python
+									_[info['name']]
+									_[info['name1']]
+									_[info['name2']]
+									_[info['name3']]
+									_[info['name4']]
+								?>
+							</span>
+						</div>
+					</div>
+				</li>
+				<?python
+				for repoName,info in projectInfo[2].items():
+				?>
+				<li class="occlusion-history success">
+					<div class="occlusion-task">
+						<div class="occlusion-task-name">
+							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 1.5L6.499 13.716.5 8.78"></path></svg>
+							<span>
+								<?python
+									_[repoName]
+								?>
+								:
+							</span>
+						</div>
+					</div>
+					<div class="occlusion-task">
+						<div class="occlusion-task-name">
+
+							<span>
+								author:
+								<?python
+									_[info['author']]
+								?>
+							</span>
+						</div>
+						<div class="occlusion-task-name">
+
+							<span>
+								message:
+								<?python
+									_[info['message']]
+								?>
+							</span>
+						</div>
+						<div class="occlusion-task-name">
+
+							<span>
+								date:
+								<?python
+									_[info['date']]
+								?>
+							</span>
+						</div>
+					</div>
+					<div class="occlusion-task">
+						<div class="occlusion-task-name">
+							patch:
+							<p>
+								<?python
+									_[info['patch']]
+								?>
+							</p>
 						</div>
 					</div>
 				</li>

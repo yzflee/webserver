@@ -6,22 +6,22 @@ import json
 repos = ['cxsjclassroom/webserver']
 
 def getProjectInfo():
-    info = {}
-    for repo in repos:
-        repo_url = 'https://api.github.com/repos/%s' % repo  # 确定url
-        repoInfo = readURL('Repositories/reposInfo/%s' % (repo), repo_url)  # 访问url得到数据
-        repoInfo = repoInfo and json.loads(repoInfo)  # 将数据类型转换
-        # 提取想要的信息保存在info中
-        info[repo] = {
-            "stargazers_count": repoInfo['stargazers_count'],
-            'watchers_count': repoInfo['watchers_count'],
-            'created_at': repoInfo['created_at'],
-            'size': repoInfo['size'],
-            'forks_count': repoInfo['forks_count'],
-            'open_issues': repoInfo['open_issues']
+	info = {}
+	for repo in repos:
+		repo_url = 'https://api.github.com/repos/%s' % repo  # 确定url
+		repoInfo = readURL('Repositories/reposInfo/%s' % (repo), repo_url)  # 访问url得到数据
+		repoInfo = repoInfo and json.loads(repoInfo)  # 将数据类型转换
+		# 提取想要的信息保存在info中
+		info[repo] = {
+			"stargazers_count": repoInfo['stargazers_count'],
+			'watchers_count': repoInfo['watchers_count'],
+			'created_at': repoInfo['created_at'],
+			'size': repoInfo['size'],
+			'forks_count': repoInfo['forks_count'],
+			'open_issues': repoInfo['open_issues']
 
-        }
-    return info
+		}
+	return info
 
 
 #读取url的信息，并建立缓存
