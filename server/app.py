@@ -122,10 +122,15 @@ class application(object):
 				L.append(chunk)
 			params = json.loads(b''.join(L))
 
+<<<<<<< .mine
 <<<<<<< HEAD
 	def __iter__(self):
+=======
+
+
+>>>>>>> .theirs
 		try:
-			return self.handle_route(self.path, self.params, SimpleCookie(self.env.get('HTTP_COOKIE')), None)
+			return self.handle_route(route, params, SimpleCookie(self.env.get('HTTP_COOKIE')), None)
 =======
 		try:
 			return self.handle_route(route, params, SimpleCookie(self.env.get('HTTP_COOKIE')), None)
@@ -170,12 +175,20 @@ class application(object):
 					if getattr(getattr(mod, k), '____isRoute__', False)}
 			except IOError:
 				return self.send_error(404, 'Route module "%s" not found' % moduleName)
+			except Exception as e:
+				return self.print_trace(e)
 
 		module = self.MODULES[moduleName]
 		if routeName not in module:
 			return self.send_error(404, 'Route "%s" not found' % routeName)
 		return module[routeName]
 
+	def handle_route(self, route, params, cookies, set_cookie):
+		"""Common code for GET and POST commands to handle route and send json result."""
+		if route.____useCookies__:
+			t, cookie, result = route(cookies = cookies, **params)
+		else:
+			t, cookie, result = route(**params)
 <<<<<<< HEAD
 		t, cookie, result = route(cookies, **params)
 =======
@@ -264,6 +277,7 @@ class application(object):
 				headers.append(('Set-Cookie', value.OutputString()))
 		if not url.startswith('http'):
 			url = 'http://' + url
+		headers.append(('Location', url if isinstance(url, str) else url.encode('utf-8')))
 <<<<<<< HEAD
 		headers.append(('Location', url if isinstance(url, str) else encodeUTF8(url)))
 =======
@@ -295,6 +309,8 @@ class application(object):
 			object.__setattr__(self, 'content', self.content + str(content))
 >>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 
+		def __setattr__(self, key, value):
+			self.content += '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null")
 		def __setattr__(self, key, value):
 			object.__setattr__(self, 'content', self.content + '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null"))
 
