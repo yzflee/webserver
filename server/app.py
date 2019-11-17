@@ -122,20 +122,8 @@ class application(object):
 				L.append(chunk)
 			params = json.loads(b''.join(L))
 
-<<<<<<< .mine
-<<<<<<< HEAD
-	def __iter__(self):
-=======
-
-
->>>>>>> .theirs
 		try:
 			return self.handle_route(route, params, SimpleCookie(self.env.get('HTTP_COOKIE')), None)
-			return self.handle_route(route, params, SimpleCookie(self.env.get('HTTP_COOKIE')), None)
-=======
-		try:
-			return self.handle_route(route, params, SimpleCookie(self.env.get('HTTP_COOKIE')), None)
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 		except Exception as e:
 			return self.print_trace(e)
 
@@ -148,23 +136,6 @@ class application(object):
 	#  888     888   .8'     `888.   8       `888   888     d88'  888       o  888       o
 	# o888o   o888o o88o     o8888o o8o        `8  o888bood8P'   o888ooooood8 o888ooooood8
 	#
-	def input_reader(self):
-		# Get arguments by reading body of request.
-		# We read this in chunks to avoid straining
-		# socket.read(); around the 10 or 15Mb mark, some platforms
-		# begin to have problems (bug #792570).
-		max_chunk_size = 10*1024*1024
-		size_remaining = int(self.env['CONTENT_LENGTH'])
-		while size_remaining:
-			chunk_size = min(size_remaining, max_chunk_size)
-			chunk = self.env['wsgi.input'].read(chunk_size)
-			if not chunk:
-				break
-			size_remaining -= len(chunk)
-			yield chunk
-
-	def dispatch(self, path):
-		"""Common code for GET and POST commands to dispatch request."""
 	def input_reader(self):
 		# Get arguments by reading body of request.
 		# We read this in chunks to avoid straining
@@ -195,14 +166,11 @@ class application(object):
 				return self.send_error(404, 'Route module "%s" not found' % moduleName)
 			except Exception as e:
 				return self.print_trace(e)
-			except Exception as e:
-				return self.print_trace(e)
 
 		module = self.MODULES[moduleName]
 		if routeName not in module:
 			return self.send_error(404, 'Route "%s" not found' % routeName)
 		return module[routeName]
-		return module[routeName]
 
 	def handle_route(self, route, params, cookies, set_cookie):
 		"""Common code for GET and POST commands to handle route and send json result."""
@@ -210,22 +178,6 @@ class application(object):
 			t, cookie, result = route(cookies = cookies, **params)
 		else:
 			t, cookie, result = route(**params)
-	def handle_route(self, route, params, cookies, set_cookie):
-		"""Common code for GET and POST commands to handle route and send json result."""
-		if route.____useCookies__:
-			t, cookie, result = route(cookies = cookies, **params)
-		else:
-			t, cookie, result = route(**params)
-<<<<<<< HEAD
-		t, cookie, result = route(cookies, **params)
-=======
-	def handle_route(self, route, params, cookies, set_cookie):
-		"""Common code for GET and POST commands to handle route and send json result."""
-		if route.____useCookies__:
-			t, cookie, result = route(cookies = cookies, **params)
-		else:
-			t, cookie, result = route(**params)
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 
 		cookie is not None and cookies.load(cookie)
 		if set_cookie:
@@ -237,8 +189,6 @@ class application(object):
 		if t == ROUTE_REDIRECT:
 			return self.redirect(result, cookie)
 		elif t == ROUTE_FORWARD:
-			route = self.dispatch(result[0])
-			return callable(route) and route or self.handle_route(route, result[1], cookies, cookie)
 			route = self.dispatch(result[0])
 			return callable(route) and route or self.handle_route(route, result[1], cookies, cookie)
 
@@ -307,12 +257,6 @@ class application(object):
 		if not url.startswith('http'):
 			url = 'http://' + url
 		headers.append(('Location', url if isinstance(url, str) else url.encode('utf-8')))
-		headers.append(('Location', url if isinstance(url, str) else url.encode('utf-8')))
-<<<<<<< HEAD
-		headers.append(('Location', url if isinstance(url, str) else encodeUTF8(url)))
-=======
-		headers.append(('Location', url if isinstance(url, str) else url.encode('utf-8')))
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 		self.start_response('302 Found', headers)
 		return iter([''.encode()])
 
@@ -330,22 +274,12 @@ class application(object):
 	class TemplateOutput(object):
 		def __init__(self):
 			self.content = ''
-			object.__setattr__(self, 'content', '')
 
 		def __getitem__(self, content):
-			object.__setattr__(self, 'content', self.content + str(content))
-<<<<<<< HEAD
 			self.content += str(content)
-=======
-			object.__setattr__(self, 'content', self.content + str(content))
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 
 		def __setattr__(self, key, value):
 			self.content += '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null")
-		def __setattr__(self, key, value):
-			self.content += '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null")
-		def __setattr__(self, key, value):
-			object.__setattr__(self, 'content', self.content + '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null"))
 
 	def template(self, path, data):
 		path = os.path.join(config.TEMPLATE, path.lstrip('/'))
