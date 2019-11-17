@@ -279,7 +279,7 @@ class application(object):
 			object.__setattr__(self, 'content', self.content + str(content))
 
 		def __setattr__(self, key, value):
-			self.content += '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null")
+			object.__setattr__(self, 'content', self.content + '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null"))
 		def __setattr__(self, key, value):
 			self.content += '<script type="text/javascript">var %s = %s;</script>' % (key, json.dumps(value) or "null")
 		def __setattr__(self, key, value):
