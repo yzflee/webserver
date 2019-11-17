@@ -288,6 +288,7 @@ class application(object):
 			object.__setattr__(self, 'content', '')
 
 		def __getitem__(self, content):
+			object.__setattr__(self, 'content', self.content + str(content))
 <<<<<<< HEAD
 			self.content += str(content)
 =======
