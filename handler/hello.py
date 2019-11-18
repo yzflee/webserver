@@ -4,6 +4,7 @@ from app import route, response, redirect, config
 
 import logic.Team1902.projectInfo as p
 
+<<<<<<< HEAD
 @route('/hello.py.html')
 def projectInfo(cookies):
 	info = p.getProjectInfo()
@@ -37,8 +38,17 @@ def projectInfo(cookies):
 	#将info返回给页面
 	return response(projectInfo=info)
 
+=======
+import logic.Team1902.projectInfo as P
+import logic.Team1902.branches as Q
+import logic.Team1902.commits as C
+@route('/hello.py.html')
+def projectInfo(cookies):
+>>>>>>> e7c35f6862d52b16758a3bcac043f59b74a3cda0
 
+	info = [P.getProjectInfo(),Q.getbranches(),C.getcommits()]
 
+<<<<<<< HEAD
 #读取url的信息，并建立缓存
 def readURL(cache,url):
 	#看看该url是否访问过
@@ -57,3 +67,7 @@ def readURL(cache,url):
 		f.write(content)
 	return content
 >>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
+=======
+	#将info返回给页面
+	return response(projectInfo=info)
+>>>>>>> e7c35f6862d52b16758a3bcac043f59b74a3cda0
