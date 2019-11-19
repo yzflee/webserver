@@ -1,12 +1,12 @@
 #-*- coding: utf-8 -*-
 from app import route, response, redirect, config
-<<<<<<< HEAD
+
 
 import logic.Team1902.projectInfo as P
 import logic.Team1902.branches as Q
 import logic.Team1902.commits as C
 @route('/hello.py.html')
-def projectInfo(cookie):
+def projectInfo():
 
 	info = [P.getProjectInfo(),Q.getbranches(),C.getcommits()]
 	infoShow  = [
@@ -20,7 +20,7 @@ def projectInfo(cookie):
 
 	#将info返回给页面
 	return response(projectInfo=info,infoShow = infoShow)
-=======
+
 import ssl
 import requests
 import os
@@ -67,4 +67,4 @@ def readURL(cache,url):
 	with open(cache, 'w') as f:
 		f.write(content)
 	return content
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
+
