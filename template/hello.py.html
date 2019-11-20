@@ -7,29 +7,36 @@
 	<link href="/css/occlusion.css" rel="stylesheet" type="text/css" />
 
 	<script src="https://gw.alipayobjects.com/os/lib/antv/g2/3.4.10/dist/g2.min.js"></script>
-	<script src=“/js/jquery.js”></script>
+	<script src="/js/jquery.js"></script>
 	<script src="/js/hello.js"></script>
 
 </head>
-<body class="occlusion-page">
-	<?python
-	_.dataInfo = infoShow
-	?>
-	<div id="cl"></div>
 
-</head>
 <body class="occlusion-page">
 
 	<div class="container">
 		<div class="occlusion-intro">
 			<h1>Occlusion Baker</h1>
 		</div>
+
+		<?python
+		_.dataInfo = infoShow
+		?>
+		<div align="center" id="c1">
+			各项目star数及其统计结果
+		</div>
+		<hr/>
+		<?python
+		_.dataInfo1 = infoShow1
+		?>
+		<div align="center" id="c2">
+			各项目watcher数及其统计结果
+		</div>
+		<hr/>
+
+
 		<div class="occlusion-tasks">
 			<ul>
-<<<<<<< HEAD
-
-=======
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 			<!-- example -->
 				<li class="occlusion-queue">
 					<div class="occlusion-task">
@@ -45,11 +52,7 @@
 				</li>
 				<!-- add data into the example-->
 				<?python
-<<<<<<< HEAD
 				for repoName,info in projectInfo[0].items():
-=======
-				for repoName,info in projectInfo.items():
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 				?>
 				<li class="occlusion-queue">
 					<div class="occlusion-task">
@@ -74,15 +77,8 @@
 				<?python
 				pass
 				?>
-<<<<<<< HEAD
 			</ul>
 			<ul>
-				<hr>
-=======
-				<hr />
-			</ul>
-			<ul>
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 				<!--  example-->
 				<li class="occlusion-history success">
 					<div class="occlusion-task">
@@ -120,11 +116,7 @@
 				</li>
 				<!-- add data into the example-->
 				<?python
-<<<<<<< HEAD
 				for repoName,info in projectInfo[0].items():
-=======
-				for repoName,info in projectInfo.items():
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 				?>
 				<li class="occlusion-history success">
 					<div class="occlusion-task">
@@ -151,17 +143,9 @@
 							<span>
 								<?python
 									_[info['stargazers_count']]
-<<<<<<< HEAD
-
 								?>
 							</span>
 						</div>
-
-=======
-								?>
-							</span>
-						</div>
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
 						<div class="occlusion-info volumes">
 							<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M895.4 266.8l-0.9-1.7-1.2 0.6L512 64.4l-414.9 216v464.2l414.9 215 414.9-217V283.4l-31.5-16.6z m-70.6 35.1L510.7 467.6 195.6 301.3l316.2-164.6 313 165.2z m-663.7 53.6L482 524.8V872L161.1 705.7V355.5z m589.7 407l-96.1 50.3L546 869.6V521.3L862.9 354v349.7l-112.1 58.8z"></path></svg>
 							<span>
@@ -196,97 +180,7 @@
 						</div>
 					</div>
 				</li>
-				<?python
-<<<<<<< HEAD
-				for repoName,info in projectInfo[1].items():
-				?>
-				<li class="occlusion-history success">
-					<div class="occlusion-task">
-						<div class="occlusion-task-name">
-							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 1.5L6.499 13.716.5 8.78"></path></svg>
-							<span>
-								<?python
-									_[repoName]
-								?>
-								:
-							</span>
-						</div>
-					</div>
-					<div class="occlusion-infos">
-						<div class="occlusion-info chunks">
 
-							<span>
-								<?python
-									_[info['name']]
-									_[info['name1']]
-									_[info['name2']]
-									_[info['name3']]
-									_[info['name4']]
-								?>
-							</span>
-						</div>
-					</div>
-				</li>
-				<?python
-				for repoName,info in projectInfo[2].items():
-				?>
-				<li class="occlusion-history success">
-					<div class="occlusion-task">
-						<div class="occlusion-task-name">
-							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 1.5L6.499 13.716.5 8.78"></path></svg>
-							<span>
-								<?python
-									_[repoName]
-								?>
-								:
-							</span>
-						</div>
-					</div>
-					<div class="occlusion-task">
-						<div class="occlusion-task-name">
-
-							<span>
-								author:
-								<?python
-									_[info['author']]
-								?>
-							</span>
-						</div>
-						<div class="occlusion-task-name">
-
-							<span>
-								message:
-								<?python
-									_[info['message']]
-								?>
-							</span>
-						</div>
-						<div class="occlusion-task-name">
-
-							<span>
-								date:
-								<?python
-									_[info['date']]
-								?>
-							</span>
-						</div>
-					</div>
-					<div class="occlusion-task">
-						<div class="occlusion-task-name">
-							patch:
-							<p>
-								<?python
-									_[info['patch']]
-								?>
-							</p>
-						</div>
-					</div>
-				</li>
-				<?python
-=======
->>>>>>> 0e7796a61d4391ba51e3a9e21d3cdcd64a0ba8a4
-				pass
-				?>
 				<hr />
 			</ul>
 		</div>

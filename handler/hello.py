@@ -1,70 +1,53 @@
 #-*- coding: utf-8 -*-
 from app import route, response, redirect, config
-
+import os
 
 import logic.Team1902.projectInfo as P
-import logic.Team1902.branches as Q
-import logic.Team1902.commits as C
+import logic.Team1902.stars as Q
+import logic.Team1902.watchers as R
+
 @route('/hello.py.html')
 def projectInfo():
 
-	info = [P.getProjectInfo(),Q.getbranches(),C.getcommits()]
+	info = [P.getProjectInfo()]
 	infoShow  = [
-  	{ 'genre': 'Sports', 'sold': 275 },
-  	{ 'genre': 'Strategy', 'sold': 115 },
-  	{ 'genre': 'Action', 'sold': 120 },
-  	{ 'genre': 'Shooter', 'sold': 350 },
-  	{ 'genre': 'Other', 'sold': 150 }
+  	{ 'genre': 'apache/logging-log4j2', 'sold': Q.getstars()[0] },
+  	{ 'genre': 'ReactiveX/RxJava', 'sold': Q.getstars()[1]  },
+  	{ 'genre': 'apache/cassandra', 'sold': Q.getstars()[2]  },
+  	{ 'genre': 'apache/camel', 'sold': Q.getstars()[3]  },
+  	{ 'genre': 'apache/hive', 'sold': Q.getstars()[4]  },
+	{'genre': 'apache/commons-lang', 'sold': Q.getstars()[5] },
+	{'genre': 'average', 'sold': Q.getstars()[6] },
+	{'genre': 'variance/10000', 'sold': Q.getstars()[7]/10000 },
+	{'genre': 'median', 'sold': Q.getstars()[8] },
+	{'genre': 'quartile', 'sold': Q.getstars()[9] }
+	]
+
+	infoShow1 = [
+		{'genre': 'apache/logging-log4j2', 'sold': R.getwatchers()[0]},
+		{'genre': 'ReactiveX/RxJava', 'sold': R.getwatchers()[1]},
+		{'genre': 'apache/cassandra', 'sold': R.getwatchers()[2]},
+		{'genre': 'apache/camel', 'sold': R.getwatchers()[3]},
+		{'genre': 'apache/hive', 'sold': R.getwatchers()[4]},
+		{'genre': 'apache/commons-lang', 'sold': R.getwatchers()[5]},
+		{'genre': 'average', 'sold': R.getwatchers()[6]},
+		{'genre': 'variance/10000', 'sold': R.getwatchers()[7]/10000},
+		{'genre': 'median', 'sold': R.getwatchers()[8]},
+		{'genre': 'quartile', 'sold': R.getwatchers()[9]}
 	]
 
 
 	#将info返回给页面
-	return response(projectInfo=info,infoShow = infoShow)
+	return response(projectInfo=info,infoShow = infoShow,infoShow1 = infoShow1)
 
-import ssl
-import requests
-import os
-import json
-
-repos = ['cxsjclassroom/webserver',"octocat/Hello-World"]
-
-@route('/hello.py.html')
-def projectInfo(cookies):
-	info = {}
-	for repo in repos:
-		repo_url = 'https://api.github.com/repos/%s'%repo #确定url
-		repoInfo = readURL('Repositories/reposInfo/%s'%(repo),repo_url )#访问url得到数据
-		repoInfo = repoInfo and json.loads(repoInfo)#将数据类型转换
-		#提取想要的信息保存在info中
-		info[repo] = {
-			"stargazers_count":repoInfo['stargazers_count'],
-			'watchers_count':repoInfo['watchers_count'],
-			'created_at':repoInfo['created_at'],
-			'size':repoInfo['size'],
-			'forks_count':repoInfo['forks_count'],
-			'open_issues':repoInfo['open_issues']
-
-		}
-	#将info返回给页面
-	return response(projectInfo=info)
-
-
-
-#读取url的信息，并建立缓存
-def readURL(cache,url):
-	#看看该url是否访问过
-	cache = 'data/cache/%s' % cache
-	if os.path.isfile(cache):
-		with open(cache, 'r') as f:
-			content = f.read()
-		return content
-
-	content = requests.get(url).content.decode()
-
-	#吧文件内容保存下来，以免多次重复访问url，类似于缓存
-	folder = cache.rpartition('/')[0]
-	not os.path.isdir(folder) and os.makedirs(folder)
-	with open(cache, 'w') as f:
-		f.write(content)
-	return content
-
+def gitClone(name):
+	projectPath = os.path.abspath('data/gitRepo/%s'%(name))
+	not os.path.isdir(projectPath) and os.makedirs(projectPath)
+	cmd = 'git clone https://github.com/%s.git %s'% (name,projectPath)
+	cwd = os.getcwd()
+	os.chdir(projectPath)
+	result = os.system(cmd)
+	os.chdir(cwd)
+	if result !=0:
+		return False
+	return True
