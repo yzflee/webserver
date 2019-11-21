@@ -2,6 +2,7 @@
 import ssl
 import numpy as np
 import requests
+import datetime
 import os
 import json
 Javalists = [
@@ -13,22 +14,22 @@ Javalists = [
     "apache/commons-lang"
     ]
 
-def getwatchers():
+def getdaydiffers():
+    now = datetime.datetime.now()
     i = 0
-    watchers = ['','','','','','']
+    daydiffer = ['','','','','','']
     for Ja in Javalists:
         Ja_url = 'https://api.github.com/repos/%s' % Ja  # 确定url
         JaInfo = readURL('Data/%s' % (Ja), Ja_url)  # 访问url得到数据
         JaInfo = JaInfo and json.loads(JaInfo)  # 将数据类型转换
-        watchers[i] = int(JaInfo['subscribers_count'])
-
+        daydiffer[i] = int((now.year-int(JaInfo['created_at'][0:4]))*365+(now.month-int(JaInfo['created_at'][5:7]))*30+(now.day-int(JaInfo['created_at'][8:10])))
         i=i+1
         # 提取想要的信息保存
-    watchers.append(int(np.mean(watchers)))  # 加入均值
-    watchers.append(int(np.var(watchers)))  # 加入方差
-    watchers.append(int(np.percentile(watchers, 50)))  # 加入中位数
-    watchers.append(int(np.percentile(watchers, 25)))  # 加入四分位数
-    return watchers
+    daydiffer.append(int(np.mean(daydiffer)))  # 加入均值
+    daydiffer.append(int(np.var(daydiffer)))  # 加入方差
+    daydiffer.append(int(np.percentile(daydiffer, 50)))  # 加入中位数
+    daydiffer.append(int(np.percentile(daydiffer, 25)))  # 加入四分位数
+    return daydiffer
 
 
 #读取url的信息，并建立缓存
