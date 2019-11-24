@@ -1,27 +1,57 @@
 #-*- coding: utf-8 -*-
 from app import route, response, redirect, config
 import os
-
+import numpy as np
 import logic.Team1902.projectInfo as P
 import logic.Team1902.stars as Q
 import logic.Team1902.watchers as R
 import logic.Team1902.differdate as S
 
+repos = [
+
+    "apache/logging-log4j2",
+	"ReactiveX/RxJava",
+    "apache/cassandra",
+    "apache/camel",
+    "apache/hive",
+    "apache/commons-lang"
+    ]
+
+
+for name in repos:
+#def gitClone(name):
+	projectPath = os.path.abspath('data/gitRepo/%s' % (name))
+	not os.path.isdir(projectPath) and os.makedirs(projectPath)
+	#cmd = 'git clone https://github.com/%s.git %s' % (name, projectPath)
+	cwd = os.getcwd()
+	os.chdir(projectPath)
+	#result = os.system(cmd)
+	os.system('git shortlog -s -n>log.txt')
+	os.chdir(cwd)
+	#if result != 0:
+		#return False
+	#return True
+
+#for name in repos:
+	#gitClone(name)
+
+
+
 @route('/hello.py.html')
 def projectInfo():
 
-	info = [P.getProjectInfo()]
+	info = P.getProjectInfo()
 	infoShow  = [
-  	{ 'genre': 'apache/logging-log4j2', 'sold': Q.getstars()[0] },
-  	{ 'genre': 'ReactiveX/RxJava', 'sold': Q.getstars()[1]  },
-  	{ 'genre': 'apache/cassandra', 'sold': Q.getstars()[2]  },
-  	{ 'genre': 'apache/camel', 'sold': Q.getstars()[3]  },
-  	{ 'genre': 'apache/hive', 'sold': Q.getstars()[4]  },
-	{'genre': 'apache/commons-lang', 'sold': Q.getstars()[5] },
-	{'genre': 'average', 'sold': Q.getstars()[6] },
-	{'genre': 'variance/10000', 'sold': Q.getstars()[7]/10000 },
-	{'genre': 'median', 'sold': Q.getstars()[8] },
-	{'genre': 'quartile', 'sold': Q.getstars()[9] }
+  		{'genre': 'apache/logging-log4j2', 'sold': Q.getstars()[0] },
+  		{'genre': 'ReactiveX/RxJava', 'sold': Q.getstars()[1]  },
+  		{'genre': 'apache/cassandra', 'sold': Q.getstars()[2]  },
+  		{'genre': 'apache/camel', 'sold': Q.getstars()[3]  },
+  		{'genre': 'apache/hive', 'sold': Q.getstars()[4]  },
+		{'genre': 'apache/commons-lang', 'sold': Q.getstars()[5] },
+		{'genre': 'average', 'sold': Q.getstars()[6] },
+		{'genre': 'variance/10000', 'sold': Q.getstars()[7]/10000 },
+		{'genre': 'median', 'sold': Q.getstars()[8] },
+		{'genre': 'quartile', 'sold': Q.getstars()[9] }
 	]
 
 	infoShow1 = [
@@ -32,7 +62,7 @@ def projectInfo():
 		{'genre': 'apache/hive', 'sold': R.getwatchers()[4]},
 		{'genre': 'apache/commons-lang', 'sold': R.getwatchers()[5]},
 		{'genre': 'average', 'sold': R.getwatchers()[6]},
-		{'genre': 'variance/10000', 'sold': R.getwatchers()[7]/10000},
+		{'genre': 'variance/1000', 'sold': R.getwatchers()[7]/1000},
 		{'genre': 'median', 'sold': R.getwatchers()[8]},
 		{'genre': 'quartile', 'sold': R.getwatchers()[9]}
 	]
@@ -45,25 +75,54 @@ def projectInfo():
 		{'genre': 'apache/hive', 'sold': S.getdaydiffers()[4]},
 		{'genre': 'apache/commons-lang', 'sold': S.getdaydiffers()[5]},
 		{'genre': 'average', 'sold': S.getdaydiffers()[6]},
-		{'genre': 'variance/10000', 'sold': S.getdaydiffers()[7]/10000},
+		{'genre': 'variance/100', 'sold': S.getdaydiffers()[7]/100},
 		{'genre': 'median', 'sold': S.getdaydiffers()[8]},
 		{'genre': 'quartile', 'sold': S.getdaydiffers()[9]}
 	]
 
+	contributors = [69,239,279,544,194,127]
+	infoShow3 = [
+		{'genre': 'apache/logging-log4j2', 'sold': 69},
+		{'genre': 'ReactiveX/RxJava', 'sold': 239},
+		{'genre': 'apache/cassandra', 'sold': 279},
+		{'genre': 'apache/camel', 'sold': 544},
+		{'genre': 'apache/hive', 'sold': 194},
+		{'genre': 'apache/commons-lang', 'sold':127},
+		{'genre': 'average', 'sold': int(np.mean(contributors))},
+		{'genre': 'variance/100', 'sold': int(np.var(contributors))/ 100},
+		{'genre': 'median', 'sold': int(np.percentile(contributors, 50)) },
+		{'genre': 'quartile', 'sold': int(np.percentile(contributors, 25))}
+	]
+
+	releases = [224,67,243,150,54,87]
+	infoShow4 = [
+		{'genre': 'apache/logging-log4j2', 'sold': 224},
+		{'genre': 'ReactiveX/RxJava', 'sold': 67},
+		{'genre': 'apache/cassandra', 'sold': 243},
+		{'genre': 'apache/camel', 'sold': 150},
+		{'genre': 'apache/hive', 'sold': 54},
+		{'genre': 'apache/commons-lang', 'sold': 87},
+		{'genre': 'average', 'sold': int(np.mean(releases))},
+		{'genre': 'variance/100', 'sold': int(np.var(releases)) / 100},
+		{'genre': 'median', 'sold': int(np.percentile(releases, 50))},
+		{'genre': 'quartile', 'sold': int(np.percentile(releases, 25))}
+	]
+
+	commits = [5600,10757,24819,40590,13882,5592]
+	infoShow5 = [
+		{'genre': 'apache/logging-log4j2', 'sold': 5600},
+		{'genre': 'ReactiveX/RxJava', 'sold': 10757},
+		{'genre': 'apache/cassandra', 'sold': 24819},
+		{'genre': 'apache/camel', 'sold': 40590},
+		{'genre': 'apache/hive', 'sold': 13882},
+		{'genre': 'apache/commons-lang', 'sold': 5592},
+		{'genre': 'average', 'sold': int(np.mean(commits))},
+		{'genre': 'variance/10000', 'sold': int(np.var(commits)) / 10000},
+		{'genre': 'median', 'sold': int(np.percentile(commits, 50))},
+		{'genre': 'quartile', 'sold': int(np.percentile(commits, 25))}
+	]
+
 	#将info返回给页面
-	return response(projectInfo=info,infoShow = infoShow,infoShow1 = infoShow1,infoShow2 = infoShow2)
-
-def gitClone(name):
-	projectPath = os.path.abspath('data/gitRepo/%s'%(name))
-	not os.path.isdir(projectPath) and os.makedirs(projectPath)
-	cmd = 'git clone https://github.com/%s.git %s'% (name,projectPath)
-	cwd = os.getcwd()
-	os.chdir(projectPath)
-	result = os.system(cmd)
-	os.system('git shortlog -s -n>%slog.txt' % name)
-	os.chdir(cwd)
-	if result !=0:
-		return False
-	return True
-
-gitClone('apache/logging-log4j2')
+	return response(projectInfo=info,infoShow = infoShow,infoShow1 = infoShow1,
+					infoShow2 = infoShow2,infoShow3 = infoShow3,
+					infoShow4 = infoShow4,infoShow5 = infoShow5)
