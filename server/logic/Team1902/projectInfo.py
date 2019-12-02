@@ -1,7 +1,5 @@
 #-*- coding: utf-8 -*-
 
-import os
-
 repos = [
 
     "apache/logging-log4j2",
