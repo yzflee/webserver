@@ -67,6 +67,14 @@
 		</div>
 		<hr/>
 
+		<?python
+		_.dataInfo6 = info1
+		?>
+		<div align="center" id="container">
+			函数运行时间
+		</div>
+		<hr/>
+
 		<div class="occlusion-tasks">
 			<ul>
 			<!-- example -->
@@ -83,24 +91,8 @@
 					</div>
 				</li>
 				<!-- add data into the example-->
-				<?python
-				for repoName,info in projectInfo.items():
-				?>
-				<li class="occlusion-queue">
-					<div class="occlusion-task">
-						<div class="occlusion-task-name">
-							<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M592.2304 542.3104a30.72 30.72 0 0 0-30.72-30.72H304.7424a30.72 30.72 0 1 0 0 61.44h256.768a30.72 30.72 0 0 0 30.72-30.72zM761.1904 706.9184v-61.44a30.72 30.72 0 0 0-61.44 0v92.16a30.72 30.72 0 0 0 30.72 30.72h92.16a30.72 30.72 0 1 0 0-61.44zM304.7424 459.52h256.768a30.72 30.72 0 1 0 0-61.44H304.7424a30.72 30.72 0 0 0 0 61.44zM304.7424 346.0096h395.008a30.72 30.72 0 0 0 0-61.44H304.7424a30.72 30.72 0 1 0 0 61.44z"></path><path d="M862.5152 572.8256V253.1328a92.16 92.16 0 0 0-92.16-92.16H690.688A92.16 92.16 0 0 0 599.04 78.4896H436.5312a92.16 92.16 0 0 0-91.648 82.4832H265.216a92.16 92.16 0 0 0-92.16 92.16v579.84a92.16 92.16 0 0 0 92.16 92.16h401.664a205.2096 205.2096 0 0 0 195.6352-352.3072zM234.496 832.9728V253.1328a30.72 30.72 0 0 1 30.72-30.72h109.8752a30.72 30.72 0 0 0 30.72-30.72v-21.0432a30.72 30.72 0 0 1 30.72-30.72H599.04a30.72 30.72 0 0 1 30.72 30.72v21.0432a30.72 30.72 0 0 0 30.72 30.72h109.8752a30.72 30.72 0 0 1 30.72 30.72v283.9552a205.2096 205.2096 0 0 0-226.2016 326.6048H265.216a30.72 30.72 0 0 1-30.72-30.72z m495.9744 40.96a143.9232 143.9232 0 1 1 143.9232-143.9232 144.0768 144.0768 0 0 1-143.9232 143.8208z"></path></svg>
-							<span>
-								<?python
-									_[repoName]
-								?>
-							</span>
-						</div>
-					</div>
-				</li>
-				<?python
-				pass
-				?>
+
+
 			</ul>
 			<ul>
 				<!--  example-->
@@ -139,31 +131,9 @@
 					</div>
 				</li>
 				<!-- add data into the example-->
-				<?python
-				for repoName,info in projectInfo.items():
-				?>
-				<li class="occlusion-history success">
-					<div class="occlusion-task">
-						<div class="occlusion-task-name">
-							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 1.5L6.499 13.716.5 8.78"></path></svg>
-							<span>
-								(commits name)
-							</span>
-						</div>
-					</div>
-					<div class="occlusion-infos">
-						<div >
-							<span>
-								<?python
-									_[repoName]
-								?>:
-								<p></p>
-								<?python
-									_[info['repoInfo']]
-								?>
-							</span>
-						</div>
-					</div>
+
+
+
 				</li>
 			</ul>
 		</div>

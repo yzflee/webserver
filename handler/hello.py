@@ -2,10 +2,12 @@
 from app import route, response, redirect, config
 import os
 import numpy as np
-import logic.Team1902.projectInfo as P
+#import logic.Team1902.projectInfo as P
 import logic.Team1902.stars as Q
 import logic.Team1902.watchers as R
 import logic.Team1902.differdate as S
+import logic.Team1902.Test as T
+
 
 repos = [
 
@@ -40,7 +42,7 @@ for name in repos:
 @route('/hello.py.html')
 def projectInfo():
 
-	info = P.getProjectInfo()
+	#info = P.getProjectInfo() <?pythonfor repoName,info in projectInfo.items():?>
 	infoShow  = [
   		{'genre': 'apache/logging-log4j2', 'sold': Q.getstars()[0] },
   		{'genre': 'ReactiveX/RxJava', 'sold': Q.getstars()[1]  },
@@ -122,7 +124,9 @@ def projectInfo():
 		{'genre': 'quartile', 'sold': int(np.percentile(commits, 25))}
 	]
 
+	info1 = T.getTimes()
+
 	#将info返回给页面
-	return response(projectInfo=info,infoShow = infoShow,infoShow1 = infoShow1,
+	return response(infoShow = infoShow,infoShow1 = infoShow1,
 					infoShow2 = infoShow2,infoShow3 = infoShow3,
-					infoShow4 = infoShow4,infoShow5 = infoShow5)
+					infoShow4 = infoShow4,infoShow5 = infoShow5,info1 = info1)
