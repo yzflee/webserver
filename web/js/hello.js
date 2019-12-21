@@ -6,7 +6,6 @@ $(document).ready(function(){
         container: 'c1', // 指定图表容器 ID
         width : 800, // 指定图表宽度
         height : 400 // 指定图表高度
-
     });
 // Step 2: 载入数据源
     chart.source(dataInfo);
@@ -91,5 +90,65 @@ $(document).ready(function(){
     chart6.interval().position('genre*sold').color('genre')
 // Step 4: 渲染图表
     chart6.render();
+
+    const chartp1 = new G2.Chart({
+        container: 'p1', // 指定图表容器 ID
+        width : 800, // 指定图表宽度
+        height : 400 // 指定图表高度
+    });
+// Step 2: 载入数据源
+    chartp1.source(dataInfop1);
+// Step 3：创建图形语法，绘制柱状图，由 genre 和 sold 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
+    chartp1.interval().position('genre*sold').color('genre')
+// Step 4: 渲染图表
+    chartp1.render();
+
+    const chartp2 = new G2.Chart({
+        container: 'p2', // 指定图表容器 ID
+        width : 800, // 指定图表宽度
+        height : 400 // 指定图表高度
+    });
+// Step 2: 载入数据源
+    chartp2.source(dataInfop2);
+// Step 3：创建图形语法，绘制柱状图，由 genre 和 sold 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
+    chartp2.interval().position('genre*sold').color('genre')
+// Step 4: 渲染图表
+    chartp2.render();
+
+    const chartp3 = new G2.Chart({
+        container: 'p3', // 指定图表容器 ID
+        width : 800, // 指定图表宽度
+        height : 400 // 指定图表高度
+    });
+// Step 2: 载入数据源
+    chartp3.source(dataInfop3);
+// Step 3：创建图形语法，绘制柱状图，由 genre 和 sold 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
+    chartp3.interval().position('genre*sold').color('genre')
+// Step 4: 渲染图表
+    chartp3.render();
+
+    const chartp4 = new G2.Chart({
+        container: 'p4', // 指定图表容器 ID
+        width : 800, // 指定图表宽度
+        height : 400 // 指定图表高度
+    });
+// Step 2: 载入数据源
+    chartp4.source(dataInfop4);
+// Step 3：创建图形语法，绘制柱状图，由 genre 和 sold 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
+    chartp4.interval().position('genre*sold').color('genre')
+// Step 4: 渲染图表
+    chartp4.render();
+
+    const chartp5 = new G2.Chart({
+        container: 'p5', // 指定图表容器 ID
+        width : 800, // 指定图表宽度
+        height : 400 // 指定图表高度
+    });
+// Step 2: 载入数据源
+    chartp5.source(dataInfop5);
+// Step 3：创建图形语法，绘制柱状图，由 genre 和 sold 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
+    chartp5.interval().position('genre*sold').color('genre')
+// Step 4: 渲染图表
+    chartp5.render();
 
 });

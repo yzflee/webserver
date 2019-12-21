@@ -22,7 +22,7 @@ repos = [
 
 for name in repos:
 #def gitClone(name):
-	projectPath = os.path.abspath('data/gitRepo/%s' % (name))
+	projectPath = os.path.abspath('F:/webserver/data/gitRepo/%s' % (name))
 	not os.path.isdir(projectPath) and os.makedirs(projectPath)
 	#cmd = 'git clone https://github.com/%s.git %s' % (name, projectPath)
 	cwd = os.getcwd()
@@ -124,9 +124,35 @@ def projectInfo():
 		{'genre': 'quartile', 'sold': int(np.percentile(commits, 25))}
 	]
 
-	info1 = T.getTimes()
-
+	info = T.getprofile()
+	info1=[]
+	info2=[]
+	info3=[]
+	info4=[]
+	info5=[]
+	for i in range(20):						#运行时间
+		info1 = info1+[
+			{'genre':info[6][i],'sold':info[1][i]}
+		]
+	for i in range(20):						#调用次数
+		info2 = info2+[
+			{'genre':info[6][i],'sold':info[2][i]}
+		]
+	for i in range(20):						#运行时间占比
+		info3 = info3+[
+			{'genre':info[6][i],'sold':info[3][i]}
+		]
+	for i in range(20):						#时间占比Top
+		info4 = info4+[
+			{'genre':info[6][i],'sold':info[4][i]}
+		]
+	for i in range(20):						#调用次数Top
+		info5 = info5+[
+			{'genre':info[6][i],'sold':info[5][i]}
+		]
 	#将info返回给页面
 	return response(infoShow = infoShow,infoShow1 = infoShow1,
 					infoShow2 = infoShow2,infoShow3 = infoShow3,
-					infoShow4 = infoShow4,infoShow5 = infoShow5,info1 = info1)
+					infoShow4 = infoShow4,infoShow5 = infoShow5,
+					info1 = info1,info2=info2,info3=info3,
+					info4=info4,info5=info5,info6=info[0])

@@ -10,19 +10,17 @@ repos = [
     "apache/commons-lang"
     ]
 
-
-
 def getProjectInfo():
+
 	info = {}
 	for repo in repos:
-		fp = open('data/gitRepo/%s/log.txt'% (repo),encoding='utf-8')
+		fp = open('F:/webserver/data/gitRepo/%s/log.txt'% (repo),encoding='utf-8')
 		repoInfo = fp.read()
 		fp.close()
 		# 提取想要的信息保存在info中
 		info[repo] = {
 			'repoInfo':repoInfo
 		}
-
 	return info
-
+getProjectInfo()
 
