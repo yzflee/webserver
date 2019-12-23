@@ -101,23 +101,3 @@ def getprofile():
     return King
 getprofile()
 
-
-
-
-# def diaoyongguanxi():
-#     p = pstats.Stats('F:\webserver/data/profile/TriFusion_00e5c44d5a_0.prof')  # 读入数据
-#     p.strip_dirs()
-#     stats = p.stats  # 获取性能数据的对象 其中stats是个字典类型
-#     #pprint.pprint(stats)
-#     Diaoyong = []
-#
-#     for i, j in stats.items():
-#         k=list(j[4].keys())
-#         Diaoyong.append("%s调用了%s"%(i[2],k[0][2]))
-#         if (len(Diaoyong) == 30):
-#             break
-#     return Diaoyong
-# #diaoyongguanxi()
-
-
-
