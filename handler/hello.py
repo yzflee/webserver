@@ -1,5 +1,6 @@
 #-*- coding: utf-8 -*-
 from app import route, response, redirect, config
+<<<<<<< HEAD
 # import os
 # import numpy as np
 # #import logic.Team1902.projectInfo as P
@@ -37,10 +38,44 @@ import logic.Team1902.Test as T
 # #for name in repos:
 # 	#gitClone(name)
 
+=======
+
+import logic.Team1902.projectInfo as p
+
+@route('/hello.py.html')
+def projectInfo():
+	info = p.getProjectInfo()
+	#将info返回给页面
+	return response(projectInfo=info)
+import ssl
+import requests
+import os
+import json
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 
 
 @route('/hello.py.html')
 def projectInfo():
+<<<<<<< HEAD
+=======
+	info = {}
+	for repo in repos:
+		repo_url = 'https://api.github.com/repos/%s'%repo #确定url
+		repoInfo = readURL('Repositories/reposInfo/%s'%(repo),repo_url )#访问url得到数据
+		repoInfo = repoInfo and json.loads(repoInfo)#将数据类型转换
+		#提取想要的信息保存在info中
+		info[repo] = {
+			"stargazers_count":repoInfo['stargazers_count'],
+			'watchers_count':repoInfo['watchers_count'],
+			'created_at':repoInfo['created_at'],
+			'size':repoInfo['size'],
+			'forks_count':repoInfo['forks_count'],
+			'open_issues':repoInfo['open_issues']
+
+		}
+	#将info返回给页面
+	return response(projectInfo=info)
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 
 	# #info = P.getProjectInfo() <?pythonfor repoName,info in projectInfo.items():?>
 	# infoShow  = [
@@ -124,6 +159,7 @@ def projectInfo():
 	# 	{'genre': 'quartile', 'sold': int(np.percentile(commits, 25))}
 	# ]
 
+<<<<<<< HEAD
 	info = T.getprofile()
 	info1=[]
 	info2=[]
@@ -156,3 +192,23 @@ def projectInfo():
 					infoShow4 = infoShow4,infoShow5 = infoShow5,
 					info1 = info1,info2=info2,info3=info3,
 					info4=info4,info5=info5,info6=info[0])
+=======
+
+#读取url的信息，并建立缓存
+def readURL(cache,url):
+	#看看该url是否访问过
+	cache = 'data/cache/%s' % cache
+	if os.path.isfile(cache):
+		with open(cache, 'r') as f:
+			content = f.read()
+		return content
+
+	content = requests.get(url).content.decode()
+
+	#吧文件内容保存下来，以免多次重复访问url，类似于缓存
+	folder = cache.rpartition('/')[0]
+	not os.path.isdir(folder) and os.makedirs(folder)
+	with open(cache, 'w') as f:
+		f.write(content)
+	return content
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d

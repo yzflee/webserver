@@ -13,11 +13,16 @@
 </head>
 
 <body class="occlusion-page">
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 	<div class="container">
 		<div class="occlusion-intro">
 			<h1>Occlusion Baker</h1>
 		</div>
+<<<<<<< HEAD
 
 		<?python
 		_.dataInfo = infoShow
@@ -76,7 +81,11 @@
 		<hr/>
 
 		<div class="occlusion-tasks">
+=======
+			<div class="occlusion-tasks">
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 			<ul>
+            	<img src="lee.png">
 			<!-- example -->
 				<li class="occlusion-queue">
 					<div class="occlusion-task">
@@ -91,10 +100,42 @@
 					</div>
 				</li>
 				<!-- add data into the example-->
+<<<<<<< HEAD
 
 
 			</ul>
 			<ul>
+=======
+				<?python
+				for repoName,info in projectInfo[0].items():
+				?>
+				<li class="occlusion-queue">
+					<div class="occlusion-task">
+						<div class="occlusion-task-name">
+							<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M592.2304 542.3104a30.72 30.72 0 0 0-30.72-30.72H304.7424a30.72 30.72 0 1 0 0 61.44h256.768a30.72 30.72 0 0 0 30.72-30.72zM761.1904 706.9184v-61.44a30.72 30.72 0 0 0-61.44 0v92.16a30.72 30.72 0 0 0 30.72 30.72h92.16a30.72 30.72 0 1 0 0-61.44zM304.7424 459.52h256.768a30.72 30.72 0 1 0 0-61.44H304.7424a30.72 30.72 0 0 0 0 61.44zM304.7424 346.0096h395.008a30.72 30.72 0 0 0 0-61.44H304.7424a30.72 30.72 0 1 0 0 61.44z"></path><path d="M862.5152 572.8256V253.1328a92.16 92.16 0 0 0-92.16-92.16H690.688A92.16 92.16 0 0 0 599.04 78.4896H436.5312a92.16 92.16 0 0 0-91.648 82.4832H265.216a92.16 92.16 0 0 0-92.16 92.16v579.84a92.16 92.16 0 0 0 92.16 92.16h401.664a205.2096 205.2096 0 0 0 195.6352-352.3072zM234.496 832.9728V253.1328a30.72 30.72 0 0 1 30.72-30.72h109.8752a30.72 30.72 0 0 0 30.72-30.72v-21.0432a30.72 30.72 0 0 1 30.72-30.72H599.04a30.72 30.72 0 0 1 30.72 30.72v21.0432a30.72 30.72 0 0 0 30.72 30.72h109.8752a30.72 30.72 0 0 1 30.72 30.72v283.9552a205.2096 205.2096 0 0 0-226.2016 326.6048H265.216a30.72 30.72 0 0 1-30.72-30.72z m495.9744 40.96a143.9232 143.9232 0 1 1 143.9232-143.9232 144.0768 144.0768 0 0 1-143.9232 143.8208z"></path></svg>
+							<span>
+								<?python
+									_[repoName]
+								?>
+							</span>
+						</div>
+						<div class="occlusion-info time">
+							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M.861.5H14.22v14H.861zm13.252 4.061H1.182"></path><path d="M4.639 7.913c.178-.166.475-.359.893-.359.734 0 2.093 1.164-.906 3.906h2.297m1.295-3.905h2.425s-1.4 1.693-1.4 3.906"></path></svg>
+							<span>
+								<?python
+									_[info['created_at']]
+								?>
+							</span>
+						</div>
+					</div>
+				</li>
+				<?python
+				pass
+				?>
+			</ul>
+			<ul>
+				<hr>
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 				<!--  example-->
 				<li class="occlusion-history success">
 					<div class="occlusion-task">
@@ -131,16 +172,81 @@
 					</div>
 				</li>
 				<!-- add data into the example-->
+<<<<<<< HEAD
 
+=======
+				<?python
+				for repoName,info in projectInfo[0].items():
+				?>
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 				<li class="occlusion-history success">
 					<div class="occlusion-infos">
+<<<<<<< HEAD
 						<div >
 							<span>函数个数：
+=======
+						<div class="occlusion-info chunks">
+							<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M973.218909 465.454545h-372.363636L558.545455 0h372.363636l42.309818 465.454545z m-127.301818-372.363636H660.48l25.390545 279.272727h185.413819l-25.367273-279.272727z m135.773091 465.454546L1024 1024H651.636364l-42.309819-465.454545h372.363637z m-85.015273 93.090909h-185.413818l25.367273 279.272727h185.437091l-25.390546-279.272727z m-482.373818-186.181819L380.439273 93.090909H178.106182L144.244364 465.454545h270.056727z m8.448 93.09091H135.796364L101.934545 930.909091h354.676364l-33.861818-372.363636zM465.454545 0l93.09091 1024H0L93.090909 0h372.363636z"></path></svg>
+							<span>
+								<?python
+									_[info['stargazers_count']]
+
+								?>
+							</span>
+						</div>
+
+						<div class="occlusion-info volumes">
+							<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M895.4 266.8l-0.9-1.7-1.2 0.6L512 64.4l-414.9 216v464.2l414.9 215 414.9-217V283.4l-31.5-16.6z m-70.6 35.1L510.7 467.6 195.6 301.3l316.2-164.6 313 165.2z m-663.7 53.6L482 524.8V872L161.1 705.7V355.5z m589.7 407l-96.1 50.3L546 869.6V521.3L862.9 354v349.7l-112.1 58.8z"></path></svg>
+							<span>
+								<?python
+									_[info['watchers_count']]
+								?>
+							</span>
+						</div>
+						<div class="occlusion-info baking-time">
+							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><circle cx="7.5" cy="7.5" r="7"></circle><path d="M7.275 3.208V7.5L9.98 9.254"></path></svg>
+							<span>
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 								<?python
 								_[info6]
 								?>
 								</span>
 							<span>
+<<<<<<< HEAD
+=======
+								<?python
+									_[info['size']]
+								?>
+							</span>
+						</div>
+						<div class="occlusion-info revision">
+							<svg viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg"><circle cx="8.51" cy="8.5" r="3.5"></circle><path d="M16.5 8.5h-4.49m-7 0H.5"></path></svg>
+							<span>
+								<?python
+									_[info['open_issues']]
+								?>
+							</span>
+						</div>
+					</div>
+				</li>
+				<?python
+				for repoName,info in projectInfo[1].items():
+				?>
+				<li class="occlusion-history success">
+					<div class="occlusion-task">
+						<div class="occlusion-task-name">
+							<svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 1.5L6.499 13.716.5 8.78"></path></svg>
+							<span>
+								<?python
+									_[repoName]
+								?>
+								:
+							</span>
+						</div>
+					</div>
+					<div class="occlusion-infos">
+						<div class="occlusion-info chunks">
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 
 								<?python
 								_.dataInfop1 = info1
@@ -185,6 +291,13 @@
 						</div>
 					</div>
 				</li>
+<<<<<<< HEAD
+=======
+				<?python
+				pass
+				?>
+				<hr />
+>>>>>>> b8e10d4c97fbd59d633fdb323d73bd7fe222955d
 			</ul>
 		</div>
 	</div>
