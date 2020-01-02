@@ -1,0 +1,405 @@
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/hash/Murmur3Bench.java
+commit 5df1eb3f16111bbf70ae8d17b915a4bffb67594b
+Author: sergey <sershe@apache.org>
+Date:   Tue May 22 12:06:12 2018 -0700
+
+    HIVE-18866 : Semijoin and analyze: Implement a Long -> Hash64 vector fast-path (Gopal Vijayaraghavan, Sergey Shelukhin, reviewed by Prasanth Jayachandran)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/operators/VectorSelectOperatorBench.java
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/operators/AbstractOperatorBench.java
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/VectorizedLikeBench.java
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit fe9a6d5387154cec1c3fa5d82fda570103155656
+Author: Teddy Choi <tchoi@hortonworks.com>
+Date:   Mon Feb 6 17:00:52 2017 -0800
+
+    HIVE-14573: Vectorization: Implement StringExpr::find() (Teddy Choi, reviewed by Gopal V)
+
+    Signed-off-by: Gopal V <gopalv@apache.org>
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/operators/VectorGroupByOperatorBench.javacommit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/AbstractExpression.java
+commit b0eb4151a49a8192bff810bf02f73757a6ac31c4
+Author: Matt McCline <mmccline@hortonworks.com>
+Date:   Tue May 8 01:04:39 2018 -0500
+
+    HIVE-19357: Vectorization: assert_true HiveException erroneously gets suppressed to NULL (Matt McCline, reviewed by Zoltan Haindrich)
+
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit fe9a6d5387154cec1c3fa5d82fda570103155656
+Author: Teddy Choi <tchoi@hortonworks.com>
+Date:   Mon Feb 6 17:00:52 2017 -0800
+
+    HIVE-14573: Vectorization: Implement StringExpr::find() (Teddy Choi, reviewed by Gopal V)
+
+    Signed-off-by: Gopal V <gopalv@apache.org>
+
+commit 20e980552986657706a38d6378bc7983e37a8334
+Author: Teddy Choi <tchoi@hortonworks.com>
+Date:   Sun Nov 8 20:08:07 2015 -0500
+
+    HIVE-12358: Categorize vectorization benchmarks into arithmetic, comparison, logic(Teddy Choi, reviewed by Ashutosh Chauhan, Ferdinand Xu)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/mapjoin/AbstractMapJoin.java
+commit a37827ecd557c7f7d69f3b2ccdbf6535908b1461
+Author: Matt McCline <mmccline@hortonworks.com>
+Date:   Sun Sep 16 09:04:59 2018 -0500
+
+    HIVE-18908: FULL OUTER JOIN to MapJoin (Matt McCline, reviewed by Teddy Choi)
+
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit 3c7fb2a976ad363a2f96588d0c4880f682f0b855
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Tue Jul 25 02:49:01 2017 -0700
+
+    HIVE-17147: Vectorization: Add code for testing MapJoin operator in isolation and measuring its performance with JMH (Matt McCline via Prasanth Jayachandran)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/VectorizedArithmeticBench.java
+commit 974d4190235477ff3a8d908e899421ba0c4117c3
+Author: Vihang Karajgaonkar <vihang@cloudera.com>
+Date:   Sun Jan 14 09:47:26 2018 -0800
+
+    HIVE-18421 : Vectorized execution handles overflows in a different manner than non-vectorized execution (Vihang Karajgaonkar, reviewed by Sahil Takiar)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit 20e980552986657706a38d6378bc7983e37a8334
+Author: Teddy Choi <tchoi@hortonworks.com>
+Date:   Sun Nov 8 20:08:07 2015 -0500
+
+    HIVE-12358: Categorize vectorization benchmarks into arithmetic, comparison, logic(Teddy Choi, reviewed by Ashutosh Chauhan, Ferdinand Xu)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$  git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/VectorizedComparisonBench.java"
+commit 71c49878c3669f19f900ec1ffe7652c91ce15d38
+Author: Matt McCline <mmccline@hortonworks.com>
+Date:   Wed Jul 25 09:58:51 2018 -0500
+
+    HIVE-20207: Vectorization: Fix NULL / Wrong Results issues in Filter / Compare (Matt McCline, reviewed by Teddy Choi)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit 20e980552986657706a38d6378bc7983e37a8334
+Author: Teddy Choi <tchoi@hortonworks.com>
+Date:   Sun Nov 8 20:08:07 2015 -0500
+
+    HIVE-12358: Categorize vectorization benchmarks into arithmetic, comparison, logic(Teddy Choi, reviewed by Ashutosh Chauhan, Ferdinand Xu)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/VectorizedComparisonBench.java"
+commit 71c49878c3669f19f900ec1ffe7652c91ce15d38
+Author: Matt McCline <mmccline@hortonworks.com>
+Date:   Wed Jul 25 09:58:51 2018 -0500
+
+    HIVE-20207: Vectorization: Fix NULL / Wrong Results issues in Filter / Compare (Matt McCline, reviewed by Teddy Choi)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit 20e980552986657706a38d6378bc7983e37a8334
+Author: Teddy Choi <tchoi@hortonworks.com>
+Date:   Sun Nov 8 20:08:07 2015 -0500
+
+    HIVE-12358: Categorize vectorization benchmarks into arithmetic, comparison, logic(Teddy Choi, reviewed by Ashutosh Chauhan, Ferdinand Xu)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/serde/LazySimpleSerDeBench.java"
+commit 82cb4c19642bf40939de74f66d8b9a8c0f8a3d49
+Author: Sergey Shelukhin <sershe@apache.org>
+Date:   Mon Feb 27 11:40:41 2017 -0800
+
+    HIVE-15743 : vectorized text parsing: speed up double parse (Teddy Choi, reviewed by Gopal V, Sergey Shelukhin)
+
+commit 146a152803971d0bd5e992aa7085ce14a06b3b94
+Author: Gopal V <gopalv@apache.org>
+Date:   Sat May 28 22:55:38 2016 -0700
+
+    HIVE-13887 : LazySimpleSerDe should parse "NULL" dates faster (Gopal V via Ashutosh Chauhan)
+
+    Signed-off-by: Ashutosh Chauhan <hashutosh@apache.org>
+
+commit 980491821e6c33d595e8a0e3abcfbc6c207aa436
+Author: Gopal V <gopalv@apache.org>
+Date:   Mon Sep 14 18:13:42 2015 -0700
+
+    HIVE-11544: Improve LazySimpleSerDe null data handling for Byte, Short, Integer, Float, Long and Double. (Gopal V, reviewed by Ashutosh Chauhan)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/mapjoin/MapJoinMultiKeyBench.java"
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit ccd02c83780c938069edec179d8d06500b80e779
+Author: Aihua Xu <aihuaxu@apache.org>
+Date:   Tue Sep 26 13:52:31 2017 -0700
+
+    Revert "HIVE-17373: Upgrade some dependency versions (Aihua Xu, reviewed by Naveen Gangam)"
+
+    This reverts commit 5f13f286cfddc4ed0a06eb40b7c69a5ca69ab300.
+
+commit 5f13f286cfddc4ed0a06eb40b7c69a5ca69ab300
+Author: Aihua Xu <aihuaxu@apache.org>
+Date:   Tue Aug 22 16:05:58 2017 -0700
+
+    HIVE-17373: Upgrade some dependency versions (Aihua Xu, reviewed by Naveen Gangam)
+
+commit 3c7fb2a976ad363a2f96588d0c4880f682f0b855
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Tue Jul 25 02:49:01 2017 -0700
+
+    HIVE-17147: Vectorization: Add code for testing MapJoin operator in isolation and measuring its performance with JMH (Matt McCline via Prasanth Jayachandran)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/mapjoin/MapJoinOneLongKeyBench.java"
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit ccd02c83780c938069edec179d8d06500b80e779
+Author: Aihua Xu <aihuaxu@apache.org>
+Date:   Tue Sep 26 13:52:31 2017 -0700
+
+    Revert "HIVE-17373: Upgrade some dependency versions (Aihua Xu, reviewed by Naveen Gangam)"
+
+    This reverts commit 5f13f286cfddc4ed0a06eb40b7c69a5ca69ab300.
+
+commit 5f13f286cfddc4ed0a06eb40b7c69a5ca69ab300
+Author: Aihua Xu <aihuaxu@apache.org>
+Date:   Tue Aug 22 16:05:58 2017 -0700
+
+    HIVE-17373: Upgrade some dependency versions (Aihua Xu, reviewed by Naveen Gangam)
+
+commit 3c7fb2a976ad363a2f96588d0c4880f682f0b855
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Tue Jul 25 02:49:01 2017 -0700
+
+    HIVE-17147: Vectorization: Add code for testing MapJoin operator in isolation and measuring its performance with JMH (Matt McCline via Prasanth Jayachandran)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/mapjoin/MapJoinOneStringKeyBench.java"
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
+
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit ccd02c83780c938069edec179d8d06500b80e779
+Author: Aihua Xu <aihuaxu@apache.org>
+Date:   Tue Sep 26 13:52:31 2017 -0700
+
+    Revert "HIVE-17373: Upgrade some dependency versions (Aihua Xu, reviewed by Naveen Gangam)"
+
+    This reverts commit 5f13f286cfddc4ed0a06eb40b7c69a5ca69ab300.
+
+commit 5f13f286cfddc4ed0a06eb40b7c69a5ca69ab300
+Author: Aihua Xu <aihuaxu@apache.org>
+Date:   Tue Aug 22 16:05:58 2017 -0700
+
+    HIVE-17373: Upgrade some dependency versions (Aihua Xu, reviewed by Naveen Gangam)
+
+commit 3c7fb2a976ad363a2f96588d0c4880f682f0b855
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Tue Jul 25 02:49:01 2017 -0700
+
+    HIVE-17147: Vectorization: Add code for testing MapJoin operator in isolation and measuring its performance with JMH (Matt McCline via Prasanth Jayachandran)
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/udf/json_read/JsonReadBench.java"
+commit 1105ef3974d8a324637d3d35881a739af3aeb382
+Author: Zoltan Haindrich <kirk@rxd.hu>
+Date:   Tue Jul 10 16:05:10 2018 +0200
+
+    HIVE-18545: Add UDF to parse complex types from json (Zoltan Haindrich reviewed by Ashutosh Chauhan)
+
+    Signed-off-by: Zoltan Haindrich <kirk@rxd.hu>
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/storage/ColumnarStorageBench.java"
+commit ba0217ff17501fb849d8999e808d37579db7b4f1
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Fri Jan 19 13:09:29 2018 -0800
+
+    HIVE-17952: Fix license headers to avoid dangling javadoc warnings (Andrew Sherman reviewed by Prasanth Jayachandran)
+
+commit 0410bf17a361514f88774cf0545ec07271a26ab8
+Author: Vihang Karajgaonkar <vihang@cloudera.com>
+Date:   Wed Nov 8 17:30:33 2017 -0800
+
+    HIVE-17961 : NPE during initialization of VectorizedParquetRecordReader when input split is null (Vihang Karajgaonkar, reviewed by Ferdinand Xu)
+
+commit 6de5d1d4ba40269a0bf5ad6ee42797021541fe97
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed Jun 28 17:07:38 2017 -0500
+
+    Revert "HIVE-12767: Implement table property to address Parquet int96 timestamp bug (Barna Zsombor Klara and Sergio Pena, reviewed by Ryan Blue)"
+
+    This reverts commit 84fdc1c7c8ff0922aa44f829dbfa9659935c503e.
+
+commit 84fdc1c7c8ff0922aa44f829dbfa9659935c503e
+Author: Barna Zsombor Klara <zsombor.klara@cloudera.com>
+Date:   Tue Feb 28 11:48:29 2017 -0600
+
+    HIVE-12767: Implement table property to address Parquet int96 timestamp bug (Barna Zsombor Klara and Sergio Pena, reviewed by Ryan Blue)
+
+commit 0a4446e641748c33e8da6e5e54c69b3e25964464
+Author: Ferdinand Xu <cheng.a.xu@intel.com>
+Date:   Tue Feb 7 02:11:01 2017 +0800
+
+    HIVE-14827: Micro benchmark for Parquet vectorized reader (Colin Ma, reviewed by Ferdinand Xu)
+
+commit 652ed7a796c687bbb3aff0504a5f91ee685eaab9
+Author: Sergey Shelukhin <sershe@apache.org>
+Date:   Mon Nov 14 17:21:45 2016 -0800
+
+    HIVE-15167 : remove SerDe interface; undeprecate Deserializer and Serializer (Sergey Shelukhin, reviewed by Ashutosh Chauhan)
+
+commit 175e2863a22b97fa4e465e75e8956dd2183775ac
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed May 27 14:27:58 2015 -0500
+
+    HIVE-9605: Remove parquet nested objects from wrapper writable objects (Sergio Pena, reviewed by Ferdinand Xu)
+
+commit 82c037afefc2cfdaef8c17b285c6cde2e72ba6d6
+Author: Sergio Pena <sergio.pena@cloudera.com>
+Date:   Wed May 27 10:10:23 2015 -0500
+
+    Revert "HIVE-9605:Remove parquet nested objects from wrapper writable objects (Sergio Pena, reviewed by Ferdinand Xu)"
+
+    This reverts commit 4157374d1538afa7a36d2484a9e4abd1016a2ef3.
+
+    Patch committed does not belong to HIVE-9605 ticket.
+
+commit 4157374d1538afa7a36d2484a9e4abd1016a2ef3
+Author: Ferdinand Xu <cheng.a.xu@intel.com>
+Date:   Tue May 26 14:59:25 2015 -0400
+
+    HIVE-9605:Remove parquet nested objects from wrapper writable objects (Sergio Pena, reviewed by Ferdinand Xu)
+
+commit db8067f96dc57ad78f24b7128b39892682881423
+Author: Ferdinand Xu <cheng.a.xu@intel.com>
+Date:   Tue May 26 02:39:05 2015 -0400
+
+    Revert "HIVE-9605:Remove parquet nested objects from wrapper writable objects (Sergio Pena, reviewed by Ferdinand Xu)"
+
+    This reverts commit 1f75e348a90d44bbd6a836ecf7228a092c5ff709.
+
+commit 1f75e348a90d44bbd6a836ecf7228a092c5ff709
+Author: Ferdinand Xu <cheng.a.xu@intel.com>
+Date:   Mon May 25 15:18:50 2015 -0400
+
+    HIVE-9605:Remove parquet nested objects from wrapper writable objects (Sergio Pena, reviewed by Ferdinand Xu)
+
+commit 7be040c5acc842f771e40f8fe0b6dca37c14a729
+Author: Brock Noland <brock@apache.org>
+Date:   Tue Feb 3 01:57:26 2015 +0000
+
+    HIVE-9470 - Use a generic writable object to run ColumnaStorageBench write/read tests (Sergio Pena via Brock)
+
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1656619 13f79535-47bb-0310-9956-ffa450edef68
+
+commit a8dfec5d8afb60252af94ee261509edb24259fd2
+Author: Brock Noland <brock@apache.org>
+Date:   Thu Jan 22 01:26:32 2015 +0000
+
+    HIVE-8121 - Create micro-benchmarks for ParquetSerde and evaluate performance (Sergio via Brock)
+
+    git-svn-id: https://svn.apache.org/repos/asf/hive/trunk@1653746 13f79535-47bb-0310-9956-ffa450edef68
+
+cyn@DESKTOP-SFBL1RN MINGW64 ~/Desktop/git/hive (master)
+$ git log  "itests/hive-jmh/src/main/java/org/apache/hive/benchmark/vectorization/BlackholeOperator.java"
+commit 0cfd4feadd1b7dba206025cc20c5b8235231e8c5
+Author: Prasanth Jayachandran <prasanthj@apache.org>
+Date:   Wed Mar 7 05:55:44 2018 -0600
+
+    HIVE-17163: Microbenchmark for vector op processing (Prasanth Jayachandran, reviewed by Matt McCline)
